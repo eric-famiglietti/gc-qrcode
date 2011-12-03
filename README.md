@@ -31,6 +31,6 @@ $img = $this->gc_qrcode->img();
 // You can also pass an array of attributes
 $img = $this->gc_qrcode->img(array('class' => 'qr-code'));
 
-// To initialize the code to an empty state use the clear method.
+// Initialize the code to an empty state
 $this->gc_qrcode->clear();
 ```
