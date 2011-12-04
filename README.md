@@ -6,31 +6,46 @@ Wrapper class for generating QR codes via the Google Charts API.
 
 Available via the Sparks package management system for CodeIgniter.  For info about how to install sparks, go to http://getsparks.org/install.
 
-You can load the spark with this:
+You can load the spark using:
 
-```php
-$this->load->spark('gc-qrcode/[version #]/');
-```
+    $this->load->spark('gc-qrcode/[version #]/');
 
 ## Usage
 
-```php
-// Only size is required
-$this->gc_qrcode->size(350)
-                ->data("http://example.com/")
-                ->output_encoding('UTF-8')
-                ->error_correction_level('L')
-                ->margin(0);
+### Configuring your code
 
-// Generate URL to QR code
-$url = $this->gc_qrcode->url();
+    // The following methods are provided for configuring your QR code
+    // Only size is required for generating a code
+    $this->gc_qrcode->size(350)
+                    ->data("http://example.com/")
+                    ->output_encoding('UTF-8')
+                    ->error_correction_level('L')
+                    ->margin(0);
 
-// Generate <img> tag pointing to QR code
-$img = $this->gc_qrcode->img();
+### Generating your code
 
-// You can also pass an array of attributes
-$img = $this->gc_qrcode->img(array('class' => 'qr-code'));
+Generate the URL for your QR code:
 
-// Initialize the code to an empty state
-$this->gc_qrcode->clear();
-```
+    $url = $this->gc_qrcode->url();
+
+Generate an &lt;img&gt; tag containg your QR code:
+
+    $img = $this->gc_qrcode->img();
+
+By default, the image tag will contain the `src`, `width`, and `height` attributes.
+
+You can optionally pass an array of attributes as the first parameter:
+
+    $img = $this->gc_qrcode->img(array('class' => 'qr-code'));
+
+You can also specify whether or not you want the &lt;img&gt; tag to be self-closing.  This is also optional.
+
+    $this->gc_qrcode->img(array(), TRUE); // Self-closing
+    
+    $this->gc_qrcode->img(array(), FALSE); // Non self-closing
+
+### Reseting the class
+
+Use clear() to initialize the class to an empty state.
+
+    $this->gc_qrcode->clear();
