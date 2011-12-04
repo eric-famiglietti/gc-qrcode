@@ -14,8 +14,8 @@ You can load the spark using:
 
 ### Configuring your code
 
-    // The following methods are provided for configuring your QR code
-    // Only size is required for generating a code
+The following methods are provided for configuring your QR code.  Only size is required to generate a code.
+
     $this->gc_qrcode->size(350)
                     ->data("http://example.com/")
                     ->output_encoding('UTF-8')
