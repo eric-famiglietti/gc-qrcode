@@ -97,9 +97,9 @@ class Gc_qrcode {
      * @param  string
      * @return void
      */
-    public function error_correction_level($error_correction_evel)
+    public function error_correction_level($error_correction_level)
     {
-        if (!in_array($error_correction_evel, self::$_valid_error_correction_levels)) {
+        if (!in_array($error_correction_level, self::$_valid_error_correction_levels)) {
             log_message('error', 'GC_QRCode: Error correction level must be a valid value.');
         }
 
