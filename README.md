@@ -14,13 +14,21 @@ You can load the spark using:
 
 ### Configuring your code
 
-    // The following methods are provided for configuring your QR code
-    // Only size is required for generating a code
+The following methods are provided for configuring your QR code.  Only size is required to generate a code.
+
     $this->gc_qrcode->size(350)
-                    ->data("http://example.com/")
+                    ->data('http://example.com/')
                     ->output_encoding('UTF-8')
                     ->error_correction_level('L')
                     ->margin(0);
+
+#### Output encodings
+
+The valid output encodings are `UTF-8`, `Shift_JIS`, and `ISO-8859-1`.
+
+#### Error correction levels
+
+The valid error correction levels are `L`, `M`, `Q`, `H`.
 
 ### Generating your code
 
